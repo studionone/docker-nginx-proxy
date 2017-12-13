@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  main:
+    image: studionone/nginx-proxy
+    network_mode: bridge
+    container_name: proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - ENABLE_IPV6=true
+    volumes:
+      - ./certs:/etc/nginx/certs
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      
