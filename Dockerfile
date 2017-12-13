@@ -1,6 +1,5 @@
 FROM jwilder/nginx-proxy
 
-MAINTAINER Studio None <developers@studionone.com.au>
 LABEL \
     project="studionone/nginx-proxy" \
     maintainer="Studio None <developers@studionone.com.au>" \
