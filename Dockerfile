@@ -1,4 +1,4 @@
-FROM neilpang/nginx-proxy
+FROM jwilder/nginx-proxy
 
 LABEL \
     project="studionone/nginx-proxy" \
