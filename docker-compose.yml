@@ -1,16 +1,16 @@
-version: '3.3'
+version: '3.6'
 
 services:
   main:
     image: studionone/nginx-proxy
     network_mode: bridge
     container_name: proxy
+    restart: on-failure
     ports:
-      - "80:80"
-      - "443:443"
-    environment:
-      - ENABLE_IPV6=true
+      - 443:443
+      - 80:80
     volumes:
-      - ./certs:/etc/nginx/certs
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      
+      - ./proxy/certs:/etc/nginx/certs
+      - ./proxy/acme:/acmecerts
+      - ./proxy/conf.d:/etc/nginx/conf.d
