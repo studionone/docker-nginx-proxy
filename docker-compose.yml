@@ -1,14 +1,15 @@
 version: '3.7'
 
 networks:
-  localdev:
+  proxynetwork:
     external: true
+    name: localdev
 
 services:
   main:
     image: studionone/nginx-proxy
     networks:
-    - localdev
+    - proxynetwork
     container_name: proxy
     restart: on-failure
     ports:
