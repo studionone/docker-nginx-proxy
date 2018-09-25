@@ -1,16 +1,21 @@
-version: '3.6'
+version: '3.7'
+
+networks:
+  localdev:
+    external: true
 
 services:
   main:
     image: studionone/nginx-proxy
-    network_mode: bridge
+    networks:
+    - localdev
     container_name: proxy
     restart: on-failure
     ports:
-      - 443:443
-      - 80:80
+    - 443:443
+    - 80:80
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./proxy/certs:/etc/nginx/certs
-      - ./proxy/acme:/acmecerts
-      - ./proxy/conf.d:/etc/nginx/conf.d
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    - ./proxy/certs:/etc/nginx/certs
+    - ./proxy/acme:/acmecerts
+    - ./proxy/conf.d:/etc/nginx/conf.d
