@@ -18,5 +18,4 @@ services:
     volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
     - ./proxy/certs:/etc/nginx/certs
-    - ./proxy/acme:/acmecerts
-    - ./proxy/conf.d:/etc/nginx/conf.d
+    # - ./proxy/conf.d:/etc/nginx/conf.d
