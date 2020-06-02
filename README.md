@@ -1,3 +1,5 @@
+**Notice:** This project has been deprecated. Please use [neilpang/nginx-proxy](https://github.com/neilpang/nginx-proxy) instead
+
 # docker-nginx-proxy
 Customised build of [neilpang/nginx-proxy](https://github.com/neilpang/nginx-proxy) with some extra config for development such as:
 
